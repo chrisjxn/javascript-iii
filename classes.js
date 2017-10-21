@@ -22,7 +22,17 @@ Each employee can:
 call your class Employee and receive all the data in the constructor in the order listed
 */
 
-
+class Employee {
+    constructor(first_name, last_name, email, age) {
+        this.first_name = first_name
+        this.last_name = last_name
+        this.email = email
+        this.age = age
+    }
+    makeWidget() {
+        return `${this.first_name} ${this.last_name} Widget`;
+    }
+}
 
 /*
 
@@ -41,7 +51,23 @@ call your class Manager
 
 */
 
-
+class Manager {
+    constructor(first_name, last_name, email, age) {
+        this.first_name = first_name
+        this.last_name = last_name
+        this.email = email
+        this.age = age
+        this.reports = []
+    }
+    hire(employee) {
+        this.reports.push(employee);
+        return this.reports;
+    }
+    fire(index) {
+        this.reports.splice(index, 1);
+        return this.reports;
+    }
+}
 
 
 
@@ -65,7 +91,36 @@ Everytime they fire an employee they get a bonus of $100 add to their .
 call you class ProgressiveManager
 */
 
-
+class ProgressiveManager {
+    constructor(first_name, last_name, email, age) {
+        this.first_name = first_name
+        this.last_name = last_name
+        this.email = email
+        this.age = age
+        this.reports = []
+        this.title = 'Not a manager'
+        this.bonus = 0
+    }
+    updateTitle() {
+        if(this.reports <= 0){ 
+            this.title = 'Not a manager';
+        } else if(this.reports <= 3) {
+            this.title = 'Barely Manager';
+        } else if(this.reports <= 10) {
+            this.title = 'Mostly Manager';
+        } else if(this.reports <= 50) {
+            this.title = 'Manager';
+        } else if(this.reports <= 100) {
+            this.title = 'Manager Plus';
+        } else if(this.reports > 100) {
+            this.title = 'Bestest Manager';
+        };
+        return this.title;
+    }
+    receiveBonus() {
+        
+    }
+}
 
 
 /*

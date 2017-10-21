@@ -32,6 +32,12 @@
 // Inside the function showValues, write a for in loop that concatenates each of the property values and returns the concatenated string.
 
 function showValues( obj ) {
+
+  let tempArr = [];
+  for(let prop in obj) {
+    tempArr.push(obj[prop]);
+  }
+  return tempArr.join("");
   // CODE HERE
 }
 
@@ -43,6 +49,12 @@ function showValues( obj ) {
 
 // CODE HERE
 
+let greaterThan10 = obj => {
+  for(let key in obj) {
+    obj[key] > 10 ? obj[key] = 0 : obj[key];
+  }
+  return obj;
+}
 
 
 // ========================
@@ -52,6 +64,12 @@ function showValues( obj ) {
 
 // CODE HERE
 
+let double = obj => {
+  for(let key in obj) {
+    obj[key] = obj[key] * 2;
+  }
+  return obj;
+}
 
 
 // ========================
@@ -61,6 +79,15 @@ function showValues( obj ) {
 
 // CODE HERE
 
+let secrets = obj => {
+  var str = "";
+  for(let key in obj) {
+    if(key.substring(0, 2) === 'sh') {
+      str = str + obj[key];
+    }
+  }
+  return str;
+}
 
 // ========================
 
@@ -85,6 +112,7 @@ function showValues( obj ) {
 // Write a function called removePassword that takes in an object. Delete the property password and return the object.
 
 // CODE HERE
+
 
 
 
